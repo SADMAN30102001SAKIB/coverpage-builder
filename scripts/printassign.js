@@ -46,10 +46,9 @@ async function MakeAssignment() {
   ) {
     alert("All fields are required!");
   } else if (
-    !(parseInt(rollNumber) >= 2103001 && parseInt(rollNumber) <= 2103181)
+    parseInt(rollNumber) >= 2103001 &&
+    parseInt(rollNumber) <= 2103181
   ) {
-    alert("Invalid Roll!");
-  } else {
     const newRollValue = document.getElementById("roll").value;
 
     localStorage.setItem("roll", newRollValue);

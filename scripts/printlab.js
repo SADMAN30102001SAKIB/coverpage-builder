@@ -50,10 +50,9 @@ async function MakeLabCover() {
   ) {
     alert("All fields are required!");
   } else if (
-    !(parseInt(rollNumber) >= 2103001 && parseInt(rollNumber) <= 2103181)
+    parseInt(rollNumber) >= 2103001 &&
+    parseInt(rollNumber) <= 2103181
   ) {
-    alert("Invalid Roll!");
-  } else {
     const newRollValue_lab = document.getElementById("roll_lab").value;
 
     localStorage.setItem("roll_lab", newRollValue_lab);
