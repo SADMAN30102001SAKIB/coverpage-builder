@@ -142,7 +142,7 @@ async function MakeLabCoverGroup() {
     const button = document.querySelector(".labgnrgrp");
     button.innerText = "Generating...";
 
-    const fileUrl = "https://smartcoverbuilder.000webhostapp.com/LabCover.pdf";
+    const fileUrl = "https://corsproxy.io/?https://cse-coverpage.netlify.app/server/LabCover(Group).pdf";
 
     const response = await fetch(fileUrl);
     const pdfBytes = await response.arrayBuffer();
