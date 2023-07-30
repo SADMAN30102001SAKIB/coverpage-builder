@@ -212,3 +212,8 @@ body {
   padding: 10px 20px !important;
   border: none !important;
 }
+
+.rollstyle{
+  display: flex;
+  justify-content: space-between;
+}
