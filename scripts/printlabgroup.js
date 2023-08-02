@@ -125,7 +125,7 @@ async function MakeLabCoverGroup() {
   const rollNumber5 = document.getElementById("roll_lab_group5").value;
   
   if (
-    textInput.trim() === "" 
+    textInput.trim() === "" ||
     teacherName.trim() === "" ||
     experimentNumber.trim() === "" ||
     experimentName.trim() === "" ||
