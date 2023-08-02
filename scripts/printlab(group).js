@@ -1,15 +1,15 @@
-var form = document.getElementById("formDataLab");
+var form = document.getElementById("formDataLabGroup");
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  
-  var courseCode = document.getElementById("course_code_lab_group").value;
-  var teacherName = document.getElementById("teacher_name_lab_group").value;
-  var experimentName = document.getElementById("experiment_name_group").value;
-  var experimentNumber = document.getElementById("experiment_number_group").value;
-  var roll = document.getElementById("roll_lab_group").value;
-  var dateOfSubmission = document.getElementById("date_lab_sub").value;
-  
+
+  var courseCode = document.getElementById("course_code_lab").value;
+  var teacherName = document.getElementById("teacher_name_lab").value;
+  var experimentName = document.getElementById("experiment_name").value;
+  var experimentNumber = document.getElementById("experiment_number").value;
+  var roll = document.getElementById("roll_lab").value;
+  var dateOfSubmission = document.getElementById("date_lab").value;
+
   var formData = new FormData();
   formData.append("courseCode", courseCode);
   formData.append("teacherName", teacherName);
@@ -33,7 +33,6 @@ form.addEventListener("submit", function (e) {
 });
 
 
-console.log("Working");
 function fillRoll() {
   var roll_lab_group_value = document.getElementById("roll_lab_group").value;
   
@@ -99,7 +98,7 @@ function fillRoll() {
       console.log(index);
 
     }
-    // Call your desired function here
+ 
     saveRoll1();
     saveRoll2();
     saveRoll3();
@@ -109,21 +108,24 @@ function fillRoll() {
 }
 
 
+
+
+
 async function MakeLabCoverGroup() {
-  const submissionDate = document.getElementById("date_lab_sub").value;
-  const experimentDate = document.getElementById("date_lab_exp").value;
+  const DateOfSubmission = document.getElementById("date_lab_group_sub").value;
   const experimentNumber = document.getElementById("experiment_number_group").value;
   const textInput = document.getElementById("course_code_lab_group").value;
   const rollNumber = document.getElementById("roll_lab_group").value;
+  const experimentName = document.getElementById("experiment_name_group").value;
+  const teacherName = document.getElementById("teacher_name_lab_group").value;
+
   const rollNumber2 = document.getElementById("roll_lab_group2").value;
   const rollNumber3 = document.getElementById("roll_lab_group3").value;
   const rollNumber4 = document.getElementById("roll_lab_group4").value;
   const rollNumber5 = document.getElementById("roll_lab_group5").value;
-  const experimentName = document.getElementById("experiment_name_group").value;
-  const teacherName = document.getElementById("teacher_name_lab_group").value;
-
+  
   if (
-    textInput.trim() === "" ||
+    textInput.trim() === "" 
     teacherName.trim() === "" ||
     experimentNumber.trim() === "" ||
     experimentName.trim() === "" ||
@@ -135,14 +137,13 @@ async function MakeLabCoverGroup() {
     parseInt(rollNumber) >= 2103001 &&
     parseInt(rollNumber) <= 2103181
   ) {
-    const newRollValue_lab = document.getElementById("roll_lab").value;
 
-    localStorage.setItem("roll_lab", newRollValue_lab);
 
     const button = document.querySelector(".labgnrgrp");
     button.innerText = "Generating...";
 
-    const fileUrl = "https://corsproxy.io/?https://cse-coverpage.netlify.app/server/LabCover(Group).pdf";
+
+      const fileUrl = "https://corsproxy.io/?https://cse-coverpage.netlify.app/server/LabCover(Group).pdf";
 
     const response = await fetch(fileUrl);
     const pdfBytes = await response.arrayBuffer();
@@ -187,24 +188,10 @@ async function MakeLabCoverGroup() {
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
-    page.drawText(submissionDate, {
-      x: 220,
-      y: 341,
-      size: 12,
-      font: timesNewRomanFont,
-      color: PDFLib.rgb(0, 0, 0),
-    });
-    page.drawText(experimentDate, {
-      x: 220,
-      y: 357,
-      size: 12,
-      font: timesNewRomanFont,
-      color: PDFLib.rgb(0, 0, 0),
-    });
-    
+
     const studentName = student_data["n" + rollNumber].name;
     const studentSection = student_data["n" + rollNumber].section;
-    // const studentSeries = student_data["n" + rollNumber].series + "";
+  
     page.drawText(studentName, {
       x: 74,
       y: 292,
@@ -226,8 +213,8 @@ async function MakeLabCoverGroup() {
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
-    const roll2name = student_data["n" + rollNumber2].name;
-    const roll2roll = student_data["n" + rollNumber2].section;
+
+      const roll2name = student_data["n" + rollNumber2].name;
     page.drawText(roll2name, {
       x: 74,
       y: 225,
@@ -235,15 +222,15 @@ async function MakeLabCoverGroup() {
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
-    page.drawText(roll2roll, {
+    page.drawText(rollNumber2, {
       x: 65,
       y: 209,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
-    const roll3name = student_data["n" + rollNumber3].name;
-    const roll3roll = student_data["n" + rollNumber3].section;
+
+          const roll3name = student_data["n" + rollNumber3].name;
     page.drawText(roll3name, {
       x: 74,
       y: 193,
@@ -251,7 +238,7 @@ async function MakeLabCoverGroup() {
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
-    page.drawText(roll3roll, {
+    page.drawText(rollNumber3, {
       x: 65,
       y: 177,
       size: 12,
@@ -259,7 +246,6 @@ async function MakeLabCoverGroup() {
       color: PDFLib.rgb(0, 0, 0),
     });
     const roll4name = student_data["n" + rollNumber4].name;
-    const roll4roll = student_data["n" + rollNumber4].section;
     page.drawText(roll4name, {
       x: 74,
       y: 160,
@@ -267,7 +253,7 @@ async function MakeLabCoverGroup() {
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
-    page.drawText(roll4roll, {
+    page.drawText(rollNumber4, {
       x: 65,
       y: 145,
       size: 12,
@@ -275,7 +261,7 @@ async function MakeLabCoverGroup() {
       color: PDFLib.rgb(0, 0, 0),
     });
     const roll5name = student_data["n" + rollNumber5].name;
-    const roll5roll = student_data["n" + rollNumber5].section;
+
     page.drawText(roll5name, {
       x: 74,
       y: 127,
@@ -283,9 +269,9 @@ async function MakeLabCoverGroup() {
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
-    page.drawText(roll5roll, {
+    page.drawText(rollNumber5, {
       x: 65,
-      y: 120,
+      y: 110,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
@@ -295,49 +281,57 @@ async function MakeLabCoverGroup() {
     const teacherNameText = teacher_list[teacherName].name;
     const teacherDesignation = teacher_list[teacherName].designation;
 
-    page.drawText(teacherNameText, {
+ page.drawText(teacherNameText, {
       x: 310,
-      y: 292,
-      size: 12,
+      y: 287,
+      size: 18,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
     page.drawText(teacherDesignation, {
       x: 310,
-      y: 277,
-      size: 12,
+      y: 270,
+      size: 18,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
-    page.drawText("Rajshahi University of Engineering and", {
+    page.drawText("Rajshahi University of Engineering", {
       x: 310,
-      y: 262,
-      size: 12,
+      y: 253,
+      size: 18,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
-    page.drawText("Technology", {
-      x: 320,
-      y: 247,
-      size: 12,
+    page.drawText("and Technology", {
+      x: 310,
+      y: 236,
+      size: 18,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
     page.drawText(DateOfSubmission, {
-      x: 210,
-      y: 75,
+      x: 220,
+      y: 340,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
-
+    const experimentDate = document.getElementById("date_lab_group_exp").value;
+        page.drawText(experimentDate, {
+      x: 220,
+      y: 357,
+      size: 12,
+      font: timesNewRomanFont,
+      color: PDFLib.rgb(0, 0, 0),
+    });
+  
     const modifiedPDFBytes = await pdfDoc.save();
     const blob = new Blob([modifiedPDFBytes], { type: "application/pdf" });
     const url = URL.createObjectURL(blob);
 
     const link = document.createElement("a");
     link.href = url;
-    link.download = experimentName + " Lab Cover.pdf";
+    link.download = "Lab Cover.pdf";
     link.click();
 
     URL.revokeObjectURL(url);
@@ -350,7 +344,7 @@ async function downloadLabCover() {
   const button = document.querySelector(".labdow");
   button.innerText = "Downloading...";
 
-  const fileUrl = "https://smartcoverbuilder.000webhostapp.com/LabCover.pdf";
+      const fileUrl = "https://corsproxy.io/?https://cse-coverpage.netlify.app/server/LabCover(Group).pdf";
 
   const response = await fetch(fileUrl);
   const pdfBlob = await response.blob();
