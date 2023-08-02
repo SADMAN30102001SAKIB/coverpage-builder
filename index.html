@@ -144,7 +144,7 @@
     <!-- Popup lab cover form -->
     <div id="labcover-popup-group" class="popup">
       <div class="popup-content">
-        <form method="post" class="form-container" id="formDataLab">
+        <form method="post" class="form-container" id="formDataLabGroup">
           <h1>Lab Cover(Group)</h1>
           <div class="course_code">
             <div class="form-floating">
@@ -236,7 +236,7 @@
           <label for="date_lab_sub">Submission Date:</label><br />
           <input
             type="text"
-            id="date_lab_group"
+            id="date_lab_group_sub"
             name="date_lab_sub"
             required
           /><br /><br />
@@ -244,7 +244,7 @@
           <button
             class="btn btn-success labgnrgrp"
             placeholder="Submit"
-            onclick="MakeLabCoverGroup()"
+            onclick="MakeLabCoverTest()"
             type="submit"
           >
             Generate PDF
@@ -256,7 +256,7 @@
       >
     </div>
 
-    Popup sample form
+    <!-- Popup sample form -->
     <div id="sample-popup" class="popup">
       <div class="popup-content">
         <div class="form-container">
@@ -311,7 +311,7 @@
       
       const rollSaved5 = localStorage.getItem("roll5");
       if (rollSaved5) {
-        document.getElementById("roll_lab_group").value = rollSaved5;
+        document.getElementById("roll_lab_group5").value = rollSaved5;
       }
 
       const isMobile = /Mobi|Android/i.test(navigator.userAgent);
