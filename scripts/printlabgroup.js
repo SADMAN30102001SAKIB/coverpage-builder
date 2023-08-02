@@ -3,33 +3,33 @@ var form = document.getElementById("formDataLabGroup");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  var courseCode = document.getElementById("course_code_lab").value;
-  var teacherName = document.getElementById("teacher_name_lab").value;
-  var experimentName = document.getElementById("experiment_name").value;
-  var experimentNumber = document.getElementById("experiment_number").value;
-  var roll = document.getElementById("roll_lab").value;
-  var dateOfSubmission = document.getElementById("date_lab").value;
+  // var courseCode = document.getElementById("course_code_lab").value;
+  // var teacherName = document.getElementById("teacher_name_lab").value;
+  // var experimentName = document.getElementById("experiment_name").value;
+  // var experimentNumber = document.getElementById("experiment_number").value;
+  // var roll = document.getElementById("roll_lab").value;
+  // var dateOfSubmission = document.getElementById("date_lab").value;
 
-  var formData = new FormData();
-  formData.append("courseCode", courseCode);
-  formData.append("teacherName", teacherName);
-  formData.append("experimentName", experimentName);
-  formData.append("experimentNumber", experimentNumber);
-  formData.append("roll", roll);
-  formData.append("dateOfSubmission", dateOfSubmission);
+  // var formData = new FormData();
+  // formData.append("courseCode", courseCode);
+  // formData.append("teacherName", teacherName);
+  // formData.append("experimentName", experimentName);
+  // formData.append("experimentNumber", experimentNumber);
+  // formData.append("roll", roll);
+  // formData.append("dateOfSubmission", dateOfSubmission);
 
-  var xhr = new XMLHttpRequest();
-  xhr.open(
-    "POST",
-    "https://smartcoverbuilder.000webhostapp.com/labDB.php",
-    true
-  );
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-      alert(xhr.responseText);
-    }
-  };
-  xhr.send(formData);
+  // var xhr = new XMLHttpRequest();
+  // xhr.open(
+  //   "POST",
+  //   "https://smartcoverbuilder.000webhostapp.com/labDB.php",
+  //   true
+  // );
+  // xhr.onreadystatechange = function () {
+  //   if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+  //     alert(xhr.responseText);
+  //   }
+  // };
+  // xhr.send(formData);
 });
 
 
