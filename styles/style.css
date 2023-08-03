@@ -79,7 +79,7 @@ body {
 
 .popup.open .popup-content-group {
   font-size: larger;
-  transform: scale(0.85);
+  transform: scale(0.75);
 }
 
 .form-container {
@@ -87,7 +87,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  max-width: 400px;
+  max-width: 450px;
   text-align: center;
 }
 
@@ -150,6 +150,7 @@ body {
 
 #date_lab,
 #date_lab_group,
+#date_lab_group_exp,
 #date_assign {
   border: none;
   border-radius: 5px;
@@ -178,13 +179,18 @@ body {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  padding: 10px 20px;
+  padding: 10px 30px;
   border: none;
   border-radius: 5px;
   background-color: #f2f2f2;
-  font-size: large;
+  font-size: medium;
   outline: none;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-select-group {
+  font-weight: 500;
+  font-size: 105%;
 }
 
 .form-select option {

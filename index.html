@@ -153,13 +153,19 @@
 
           <div class="course_code">
             <div class="form-floating">
-              <select class="form-select" id="course_code_lab_group"></select>
+              <select
+                class="form-select form-select-group"
+                id="course_code_lab_group"
+              ></select>
             </div>
           </div>
 
           <div class="teacher_name">
             <div class="form-floating">
-              <select class="form-select" id="teacher_name_lab_group"></select>
+              <select
+                class="form-select form-select-group"
+                id="teacher_name_lab_group"
+              ></select>
             </div>
           </div>
 
@@ -201,7 +207,6 @@
             required
           /><br />
 
-          <!-- <label for="roll_lab_group3" class="roll_lab">Roll 3: </label><br /> -->
           <input
             type="text"
             id="roll_lab_group3"
@@ -210,7 +215,6 @@
             required
           /><br />
 
-          <!-- <label for="roll_lab_group4" class="roll_lab">Roll 4: </label><br /> -->
           <input
             type="text"
             id="roll_lab_group4"
@@ -219,12 +223,19 @@
             required
           /><br />
 
-          <!-- <label for="roll_lab_group5" class="roll_lab">Roll 5: </label><br /> -->
           <input
             type="text"
             id="roll_lab_group5"
             name="roll_lab_group5"
             value="2103"
+            required
+          /><br />
+
+          <label for="date_lab_exp">Experiment Date:</label><br />
+          <input
+            type="text"
+            id="date_lab_group_exp"
+            name="date_lab_exp"
             required
           /><br />
 
@@ -332,7 +343,7 @@
           ".popup.open .popup-content-group"
         );
         for (var i = 0; i < openPopupContentGroup.length; i++) {
-          openPopupContentGroup[i].style.transform = "scale(1.4)";
+          openPopupContentGroup[i].style.transform = "scale(1.35)";
         }
 
         var body = document.body;

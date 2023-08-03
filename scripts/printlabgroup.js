@@ -69,6 +69,7 @@ function fillRoll() {
 
 async function MakeLabCoverGroup() {
   const DateOfSubmission = document.getElementById("date_lab_group").value;
+  const DateOfExperiment = document.getElementById("date_lab_group_exp").value;
   const experimentNumber = document.getElementById(
     "experiment_number_group"
   ).value;
@@ -282,9 +283,18 @@ async function MakeLabCoverGroup() {
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
-    page.drawText(DateOfSubmission, {
+
+    page.drawText(DateOfExperiment, {
       x: 205,
-      y: 85,
+      y: 86.3,
+      size: 12,
+      font: timesNewRomanFont,
+      color: PDFLib.rgb(0, 0, 0),
+    });
+
+    page.drawText(DateOfSubmission, {
+      x: 442,
+      y: 86.5,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
