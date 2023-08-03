@@ -209,5 +209,5 @@ async function downloadLabCover() {
 
   URL.revokeObjectURL(url);
 
-  button.innerText = "Lab Cover";
+  button.innerText = "Lab Cover(Individual)";
 }

@@ -21,7 +21,10 @@
       <button class="btn btn-success" onclick="togglePopup('labcover-popup')">
         Lab Cover(Individual)
       </button>
-      <button class="btn btn-success" onclick="togglePopup('labcover-popup-group')">
+      <button
+        class="btn btn-success"
+        onclick="togglePopup('labcover-popup-group')"
+      >
         Lab Cover(Group)
       </button>
       <button class="btn btn-success" onclick="togglePopup('sample-popup')">
@@ -141,21 +144,25 @@
         >&times;</span
       >
     </div>
+
     <!-- Popup lab cover form -->
     <div id="labcover-popup-group" class="popup">
-      <div class="popup-content">
+      <div class="popup-content popup-content-group">
         <form method="post" class="form-container" id="formDataLabGroup">
           <h1>Lab Cover(Group)</h1>
+
           <div class="course_code">
             <div class="form-floating">
               <select class="form-select" id="course_code_lab_group"></select>
             </div>
           </div>
+
           <div class="teacher_name">
             <div class="form-floating">
               <select class="form-select" id="teacher_name_lab_group"></select>
             </div>
           </div>
+
           <label for="experiment_name_group">Experiment Name:</label><br />
           <input
             type="text"
@@ -163,83 +170,71 @@
             name="experiment_name_group"
             required
           /><br />
+
           <label for="experiment_number_group">Experiment No:</label><br />
           <input
             type="text"
             id="experiment_number_group"
             name="experiment_number_group"
             required
-          /><br /><br />
-          <div class="rollstyle">
-          <label for="roll_lab_group" class="roll_lab_group">Roll 1: </label><br />
+          /><br />
+
+          <label for="roll_lab_group" class="roll_lab_group">Your Roll: </label>
+          <br />
           <input
             type="text"
             id="roll_lab_group"
             name="roll_lab_group"
-            oninput="fillRoll()";
+            oninput="fillRoll()"
+            ;
             value="2103"
             required
-            /><br />
-          </div>
-          <div class="rollstyle">
-            <label for="roll_lab_group2" class="roll_lab">Roll 2: </label><br />
-            <input
+          /><br />
+
+          <label for="roll_lab_group2" class="roll_lab">Teammates Roll: </label
+          ><br />
+          <input
             type="text"
             id="roll_lab_group2"
             name="roll_lab_group2"
             value="2103"
-            oninput="saveRoll2()";
             required
-            /><br />
-          </div>
-          <div class="rollstyle">
-            <label for="roll_lab_group3" class="roll_lab">Roll 3: </label><br />
-            <input
+          /><br />
+
+          <!-- <label for="roll_lab_group3" class="roll_lab">Roll 3: </label><br /> -->
+          <input
             type="text"
             id="roll_lab_group3"
             name="roll_lab_group3"
-            oninput="saveRoll3()";
             value="2103"
             required
-            /><br />
-          </div>
-          <div class="rollstyle">
-            <label for="roll_lab_group4" class="roll_lab">Roll 4: </label><br />
-            <input
+          /><br />
+
+          <!-- <label for="roll_lab_group4" class="roll_lab">Roll 4: </label><br /> -->
+          <input
             type="text"
             id="roll_lab_group4"
             name="roll_lab_group4"
             value="2103"
-            oninput="saveRoll4()";
             required
-            /><br />
-          </div>
-          <div class="rollstyle">
-            <label for="roll_lab_group5" class="roll_lab">Roll 5: </label><br />
-            <input
+          /><br />
+
+          <!-- <label for="roll_lab_group5" class="roll_lab">Roll 5: </label><br /> -->
+          <input
             type="text"
             id="roll_lab_group5"
             name="roll_lab_group5"
-            oninput="saveRoll5()";
             value="2103"
             required
-            /><br />
-          </div>
-          <br />
-            <label for="date_lab_exp">Experiment Date:</label><br />
-            <input
-            type="text"
-            id="date_lab_group_exp"
-            name="date_lab_exp"
-            required
           /><br />
+
           <label for="date_lab_sub">Submission Date:</label><br />
           <input
             type="text"
-            id="date_lab_group_sub"
+            id="date_lab_group"
             name="date_lab_sub"
             required
-          /><br /><br />
+          /><br />
 
           <button
             class="btn btn-success labgnrgrp"
@@ -266,7 +261,10 @@
           <button class="btn btn-success labdow" onclick="downloadLabCover()">
             Lab Cover(Individual)
           </button>
-          <button class="btn btn-success labdowgroup" onclick="downloadLabCoverGroup()">
+          <button
+            class="btn btn-success labdowgroup"
+            onclick="downloadLabCoverGroup()"
+          >
             Lab Cover(Group)
           </button>
         </div>
@@ -284,31 +282,31 @@
       }
 
       const rollValue_lab = localStorage.getItem("roll_lab");
-      
+
       if (rollValue_lab) {
         document.getElementById("roll_lab").value = rollValue_lab;
       }
-      
+
       const rollSaved1 = localStorage.getItem("roll1");
       if (rollSaved1) {
         document.getElementById("roll_lab_group").value = rollSaved1;
       }
-      
+
       const rollSaved2 = localStorage.getItem("roll2");
       if (rollSaved2) {
         document.getElementById("roll_lab_group2").value = rollSaved2;
       }
-      
+
       const rollSaved3 = localStorage.getItem("roll3");
       if (rollSaved3) {
         document.getElementById("roll_lab_group3").value = rollSaved3;
       }
-      
+
       const rollSaved4 = localStorage.getItem("roll4");
       if (rollSaved1) {
         document.getElementById("roll_lab_group4").value = rollSaved4;
       }
-      
+
       const rollSaved5 = localStorage.getItem("roll5");
       if (rollSaved5) {
         document.getElementById("roll_lab_group5").value = rollSaved5;
@@ -328,6 +326,13 @@
         );
         for (var i = 0; i < openPopupContent.length; i++) {
           openPopupContent[i].style.transform = "scale(1.5)";
+        }
+
+        var openPopupContentGroup = document.querySelectorAll(
+          ".popup.open .popup-content-group"
+        );
+        for (var i = 0; i < openPopupContentGroup.length; i++) {
+          openPopupContentGroup[i].style.transform = "scale(1.4)";
         }
 
         var body = document.body;

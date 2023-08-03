@@ -77,6 +77,11 @@ body {
   z-index: 99;
 }
 
+.popup.open .popup-content-group {
+  font-size: larger;
+  transform: scale(0.85);
+}
+
 .form-container {
   background-color: rgba(255, 255, 255, 0.5);
   padding: 20px;
@@ -113,41 +118,25 @@ body {
   margin: 5% auto;
 }
 
+#experiment_number,
+#experiment_number_group {
+  border: none;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 5px;
+  font-size: 16px;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+#roll_lab,
+#roll_lab_group,
+#roll_lab_group2,
+#roll_lab_group3,
+#roll_lab_group4,
+#roll_lab_group5,
 #roll {
-  margin-left: 0%;
-  border: none;
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 5px;
-  font-size: 16px;
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  width: 100%;
-}
-
-#date_assign {
-  border: none;
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 5px;
-  font-size: 16px;
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  width: 100%;
-}
-
-#experiment_number {
-  border: none;
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 5px;
-  font-size: 16px;
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  width: 100%;
-}
-
-#roll_lab {
   margin: 0% auto 5% 0%;
   border: none;
   border-radius: 5px;
@@ -159,7 +148,9 @@ body {
   width: 100%;
 }
 
-#date_lab {
+#date_lab,
+#date_lab_group,
+#date_assign {
   border: none;
   border-radius: 5px;
   background-color: #f2f2f2;
@@ -171,6 +162,7 @@ body {
 }
 
 #experiment_name,
+#experiment_name_group,
 #assign_name {
   border: none;
   border-radius: 5px;
@@ -213,7 +205,7 @@ body {
   border: none !important;
 }
 
-.rollstyle{
+/* .rollstyle {
   display: flex;
   justify-content: space-between;
-}
+} */

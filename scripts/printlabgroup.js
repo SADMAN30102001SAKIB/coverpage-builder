@@ -3,117 +3,75 @@ var form = document.getElementById("formDataLabGroup");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  // var courseCode = document.getElementById("course_code_lab").value;
-  // var teacherName = document.getElementById("teacher_name_lab").value;
-  // var experimentName = document.getElementById("experiment_name").value;
-  // var experimentNumber = document.getElementById("experiment_number").value;
-  // var roll = document.getElementById("roll_lab").value;
-  // var dateOfSubmission = document.getElementById("date_lab").value;
+  var courseCode = document.getElementById("course_code_lab_group").value;
+  var teacherName = document.getElementById("teacher_name_lab_group").value;
+  var experimentName = document.getElementById("experiment_name_group").value;
+  var experimentNumber = document.getElementById(
+    "experiment_number_group"
+  ).value;
+  var roll = document.getElementById("roll_lab_group").value;
+  var dateOfSubmission = document.getElementById("date_lab_group").value;
 
-  // var formData = new FormData();
-  // formData.append("courseCode", courseCode);
-  // formData.append("teacherName", teacherName);
-  // formData.append("experimentName", experimentName);
-  // formData.append("experimentNumber", experimentNumber);
-  // formData.append("roll", roll);
-  // formData.append("dateOfSubmission", dateOfSubmission);
+  var formData = new FormData();
+  formData.append("courseCode", courseCode);
+  formData.append("teacherName", teacherName);
+  formData.append("experimentName", experimentName);
+  formData.append("experimentNumber", experimentNumber);
+  formData.append("roll", roll);
+  formData.append("dateOfSubmission", dateOfSubmission);
 
-  // var xhr = new XMLHttpRequest();
-  // xhr.open(
-  //   "POST",
-  //   "https://smartcoverbuilder.000webhostapp.com/labDB.php",
-  //   true
-  // );
-  // xhr.onreadystatechange = function () {
-  //   if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-  //     alert(xhr.responseText);
-  //   }
-  // };
-  // xhr.send(formData);
+  var xhr = new XMLHttpRequest();
+  xhr.open(
+    "POST",
+    "https://smartcoverbuilder.000webhostapp.com/labGroupDB.php",
+    true
+  );
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+      alert(xhr.responseText);
+    }
+  };
+  xhr.send(formData);
 });
-
 
 function fillRoll() {
   var roll_lab_group_value = document.getElementById("roll_lab_group").value;
-  
-  if (roll_lab_group_value.length === 7) {
-    var roll_string=""+roll_lab_group_value;
-    if(roll_string.slice(6)<6&&roll_string.slice(6)>0)
-    {
-      var r1=parseInt(roll_string.slice(0,6)+'1');
-      var r2=parseInt(roll_string.slice(0,6)+'2');
-      var r3=parseInt(roll_string.slice(0,6)+'3');
-      var r4=parseInt(roll_string.slice(0,6)+'4');
-      var r5=parseInt(roll_string.slice(0,6)+'5');
-      var roll_list={r1,r2,r3,r4,r5}
-      console.log("Working")
-      var roll_array = Object.values(roll_list);
-      var index = roll_array.indexOf(parseInt(roll_lab_group_value));
-      roll_array.splice(index, 1);
-      
-      document.getElementById("roll_lab_group2").value=roll_array[0];
-      document.getElementById("roll_lab_group3").value=roll_array[1];
-      document.getElementById("roll_lab_group4").value=roll_array[2];
-      document.getElementById("roll_lab_group5").value=roll_array[3];
-      console.log(index);
 
-    }
-    else if(roll_string.slice(6)>5)
-    {
-      var r1=parseInt(roll_string.slice(0,6)+'6');
-      var r2=parseInt(roll_string.slice(0,6)+'7');
-      var r3=parseInt(roll_string.slice(0,6)+'8');
-      var r4=parseInt(roll_string.slice(0,6)+'9');
-      var r5=parseInt(roll_string.slice(0,5)+(parseInt(roll_string.slice(5,6))+1)+'0');
-      var roll_list={r1,r2,r3,r4,r5}
-      console.log("Working")
-      var roll_array = Object.values(roll_list);
-      var index = roll_array.indexOf(parseInt(roll_lab_group_value));
-      roll_array.splice(index, 1);
-      
-      document.getElementById("roll_lab_group2").value=roll_array[0];
-      document.getElementById("roll_lab_group3").value=roll_array[1];
-      document.getElementById("roll_lab_group4").value=roll_array[2];
-      document.getElementById("roll_lab_group5").value=roll_array[3];
-      console.log(index);
+  if (
+    roll_lab_group_value.length === 7 &&
+    roll_lab_group_value >= 2103001 &&
+    roll_lab_group_value <= 2103181
+  ) {
+    var team_member_last_roll =
+      Math.ceil(parseInt(roll_lab_group_value.slice(4, 7)) / 5) * 5 + 2103000;
+    var roll_list = [];
 
-    }
-    else if(roll_string.slice(6)==0)
-    {
-      var r1=parseInt(roll_string.slice(0,5)+(parseInt(roll_string.slice(5,6))-1)+'6');
-      var r2=parseInt(roll_string.slice(0,5)+(parseInt(roll_string.slice(5,6))-1)+'7');
-      var r3=parseInt(roll_string.slice(0,5)+(parseInt(roll_string.slice(5,6))-1)+'8');
-      var r4=parseInt(roll_string.slice(0,5)+(parseInt(roll_string.slice(5,6))-1)+'9');
-      var r5=parseInt(roll_string.slice(0,6)+'0');
-      var roll_list={r1,r2,r3,r4,r5}
-      console.log("Working")
-      var roll_array = Object.values(roll_list);
-      var index = roll_array.indexOf(parseInt(roll_lab_group_value));
-      roll_array.splice(index, 1);
-      
-      document.getElementById("roll_lab_group2").value=roll_array[0];
-      document.getElementById("roll_lab_group3").value=roll_array[1];
-      document.getElementById("roll_lab_group4").value=roll_array[2];
-      document.getElementById("roll_lab_group5").value=roll_array[3];
-      console.log(index);
+    // Generate roll numbers for the team
+    for (var i = 4; i >= 0; i--) {
+      var roll_number = team_member_last_roll - i;
 
+      if (roll_lab_group_value == roll_number) {
+        // Skip the current input field value
+        continue;
+      }
+
+      roll_list.push(roll_number);
     }
- 
-    saveRoll1();
-    saveRoll2();
-    saveRoll3();
-    saveRoll4();
-    saveRoll5();
+
+    // Update the other input fields with the generated roll numbers
+
+    document.getElementById("roll_lab_group2").value = roll_list[0];
+    document.getElementById("roll_lab_group3").value = roll_list[1];
+    document.getElementById("roll_lab_group4").value = roll_list[2];
+    document.getElementById("roll_lab_group5").value = roll_list[3];
   }
 }
 
-
-
-
-
 async function MakeLabCoverGroup() {
-  const DateOfSubmission = document.getElementById("date_lab_group_sub").value;
-  const experimentNumber = document.getElementById("experiment_number_group").value;
+  const DateOfSubmission = document.getElementById("date_lab_group").value;
+  const experimentNumber = document.getElementById(
+    "experiment_number_group"
+  ).value;
   const textInput = document.getElementById("course_code_lab_group").value;
   const rollNumber = document.getElementById("roll_lab_group").value;
   const experimentName = document.getElementById("experiment_name_group").value;
@@ -123,7 +81,7 @@ async function MakeLabCoverGroup() {
   const rollNumber3 = document.getElementById("roll_lab_group3").value;
   const rollNumber4 = document.getElementById("roll_lab_group4").value;
   const rollNumber5 = document.getElementById("roll_lab_group5").value;
-  
+
   if (
     textInput.trim() === "" ||
     teacherName.trim() === "" ||
@@ -135,15 +93,23 @@ async function MakeLabCoverGroup() {
     alert("All fields are required!");
   } else if (
     parseInt(rollNumber) >= 2103001 &&
-    parseInt(rollNumber) <= 2103181
+    parseInt(rollNumber) <= 2103181 &&
+    parseInt(rollNumber2) >= 2103001 &&
+    parseInt(rollNumber2) <= 2103181 &&
+    parseInt(rollNumber3) >= 2103001 &&
+    parseInt(rollNumber3) <= 2103181 &&
+    parseInt(rollNumber4) >= 2103001 &&
+    parseInt(rollNumber4) <= 2103181 &&
+    parseInt(rollNumber5) >= 2103001 &&
+    parseInt(rollNumber5) <= 2103181
   ) {
-
+    saveRolls();
 
     const button = document.querySelector(".labgnrgrp");
     button.innerText = "Generating...";
 
-
-      const fileUrl = "https://corsproxy.io/?https://cse-coverpage.netlify.app/server/LabCover(Group).pdf";
+    const fileUrl =
+      "https://smartcoverbuilder.000webhostapp.com/LabGroupCover.pdf";
 
     const response = await fetch(fileUrl);
     const pdfBytes = await response.arrayBuffer();
@@ -159,31 +125,31 @@ async function MakeLabCoverGroup() {
 
     const page = pdfDoc.getPages()[0];
     page.drawText(textInputTemp, {
-      x: 220,
-      y: 455,
+      x: 210,
+      y: 317,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
 
     page.drawText(courseCode, {
-      x: 220,
-      y: 489,
+      x: 210,
+      y: 350,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
 
     page.drawText(experimentNumber, {
-      x: 220,
-      y: 423,
+      x: 210,
+      y: 284,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
     page.drawText(experimentName, {
-      x: 220,
-      y: 390,
+      x: 210,
+      y: 251,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
@@ -191,71 +157,79 @@ async function MakeLabCoverGroup() {
 
     const studentName = student_data["n" + rollNumber].name;
     const studentSection = student_data["n" + rollNumber].section;
-  
+    const studentSeries = student_data["n" + rollNumber].series + "";
+
     page.drawText(studentName, {
-      x: 74,
-      y: 292,
+      x: 120,
+      y: 170,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
     page.drawText(rollNumber, {
-      x: 63,
-      y: 275,
+      x: 110,
+      y: 152.5,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
     page.drawText(studentSection, {
-      x: 120,
-      y: 259,
+      x: 130,
+      y: 136,
+      size: 12,
+      font: timesNewRomanFont,
+      color: PDFLib.rgb(0, 0, 0),
+    });
+    page.drawText(studentSeries, {
+      x: 130,
+      y: 120,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
 
-      const roll2name = student_data["n" + rollNumber2].name;
+    const roll2name = student_data["n" + rollNumber2].name;
     page.drawText(roll2name, {
-      x: 74,
-      y: 225,
+      x: 114,
+      y: 51,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
     page.drawText(rollNumber2, {
-      x: 65,
-      y: 209,
+      x: 114,
+      y: 37,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
 
-          const roll3name = student_data["n" + rollNumber3].name;
+    const roll3name = student_data["n" + rollNumber3].name;
     page.drawText(roll3name, {
-      x: 74,
-      y: 193,
+      x: 114,
+      y: 21,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
     page.drawText(rollNumber3, {
-      x: 65,
-      y: 177,
+      x: 114,
+      y: 7,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
     const roll4name = student_data["n" + rollNumber4].name;
     page.drawText(roll4name, {
-      x: 74,
-      y: 160,
+      x: 355,
+      y: 51.5,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
     page.drawText(rollNumber4, {
-      x: 65,
-      y: 145,
+      x: 355,
+      y: 37,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
@@ -263,68 +237,59 @@ async function MakeLabCoverGroup() {
     const roll5name = student_data["n" + rollNumber5].name;
 
     page.drawText(roll5name, {
-      x: 74,
-      y: 127,
+      x: 355,
+      y: 21.5,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
     page.drawText(rollNumber5, {
-      x: 65,
-      y: 110,
+      x: 355,
+      y: 7,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
-
 
     const teacherNameText = teacher_list[teacherName].name;
     const teacherDesignation = teacher_list[teacherName].designation;
 
- page.drawText(teacherNameText, {
-      x: 310,
-      y: 287,
-      size: 18,
+    page.drawText(teacherNameText, {
+      x: 320,
+      y: 170,
+      size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
     page.drawText(teacherDesignation, {
-      x: 310,
-      y: 270,
-      size: 18,
+      x: 320,
+      y: 155,
+      size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
-    page.drawText("Rajshahi University of Engineering", {
-      x: 310,
-      y: 253,
-      size: 18,
+    page.drawText("Rajshahi University of Engineering and", {
+      x: 320,
+      y: 140,
+      size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
-    page.drawText("and Technology", {
-      x: 310,
-      y: 236,
-      size: 18,
+    page.drawText("Technology", {
+      x: 320,
+      y: 125,
+      size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
     page.drawText(DateOfSubmission, {
-      x: 220,
-      y: 340,
+      x: 205,
+      y: 85,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
-    const experimentDate = document.getElementById("date_lab_group_exp").value;
-        page.drawText(experimentDate, {
-      x: 220,
-      y: 357,
-      size: 12,
-      font: timesNewRomanFont,
-      color: PDFLib.rgb(0, 0, 0),
-    });
-  
+
     const modifiedPDFBytes = await pdfDoc.save();
     const blob = new Blob([modifiedPDFBytes], { type: "application/pdf" });
     const url = URL.createObjectURL(blob);
@@ -340,11 +305,12 @@ async function MakeLabCoverGroup() {
   }
 }
 
-async function downloadLabCover() {
-  const button = document.querySelector(".labdow");
+async function downloadLabCoverGroup() {
+  const button = document.querySelector(".labdowgroup");
   button.innerText = "Downloading...";
 
-      const fileUrl = "https://corsproxy.io/?https://cse-coverpage.netlify.app/server/LabCover(Group).pdf";
+  const fileUrl =
+    "https://smartcoverbuilder.000webhostapp.com/LabGroupCover.pdf";
 
   const response = await fetch(fileUrl);
   const pdfBlob = await response.blob();
@@ -357,27 +323,28 @@ async function downloadLabCover() {
 
   URL.revokeObjectURL(url);
 
-  button.innerText = "Lab Cover";
+  button.innerText = "Lab Cover(Group)";
 }
 
-
-
-function saveRoll1(){
-  localStorage.setItem("roll1",document.getElementById("roll_lab_group").value);
-}
-
-function saveRoll2(){
-  localStorage.setItem("roll2",document.getElementById("roll_lab_group2").value);
-}
-
-function saveRoll3(){
-  localStorage.setItem("roll3",document.getElementById("roll_lab_group3").value);
-}
-
-function saveRoll4(){
-  localStorage.setItem("roll4",document.getElementById("roll_lab_group4").value);
-}
-
-function saveRoll5(){
-  localStorage.setItem("roll5",document.getElementById("roll_lab_group5").value);
+function saveRolls() {
+  localStorage.setItem(
+    "roll1",
+    document.getElementById("roll_lab_group").value
+  );
+  localStorage.setItem(
+    "roll2",
+    document.getElementById("roll_lab_group2").value
+  );
+  localStorage.setItem(
+    "roll3",
+    document.getElementById("roll_lab_group3").value
+  );
+  localStorage.setItem(
+    "roll4",
+    document.getElementById("roll_lab_group4").value
+  );
+  localStorage.setItem(
+    "roll5",
+    document.getElementById("roll_lab_group5").value
+  );
 }
