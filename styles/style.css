@@ -205,7 +205,6 @@ body {
   border: none !important;
 }
 
-/* .rollstyle {
-  display: flex;
-  justify-content: space-between;
-} */
+.labgnrgrp {
+  font-size: large;
+}
