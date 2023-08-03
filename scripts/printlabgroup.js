@@ -296,7 +296,7 @@ async function MakeLabCoverGroup() {
 
     const link = document.createElement("a");
     link.href = url;
-    link.download = "Lab Cover.pdf";
+    link.download = experimentName + " Lab Cover(Group).pdf";
     link.click();
 
     URL.revokeObjectURL(url);
