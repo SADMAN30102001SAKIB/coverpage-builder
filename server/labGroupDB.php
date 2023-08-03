@@ -19,9 +19,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $experimentNumber = sanitizeInput($_POST['experimentNumber']);
     $roll = sanitizeInput($_POST['roll']);
     $dateOfSubmission = sanitizeInput($_POST['dateOfSubmission']);
+    $dateOfExperiment = sanitizeInput($_POST['dateOfExperiment']);
     
     // Validate the inputs
-    if (empty($courseCode) || empty($teacherName) || empty($experimentName) || empty($experimentNumber) || empty($roll) || empty($dateOfSubmission)) {
+    if (empty($courseCode) || empty($teacherName) || empty($experimentName) || empty($experimentNumber) || empty($roll) || empty($dateOfSubmission) || empty($dateOfExperiment)) {
         echo "All fields are required";
         exit();
     }
@@ -32,14 +33,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Prepare the SQL statement
-    $sql = "INSERT INTO `labGroupCover` (`courseCode`, `teacherName`, `experimentName`, `experimentNumber`, `roll`, `dateOfSubmission`, `DateOfFormFillup`, `TimeOfFormFillup`) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO `labGroupCover` (`courseCode`, `teacherName`, `experimentName`, `experimentNumber`, `roll`, `dateOfExperiment`, `dateOfSubmission`, `DateOfFormFillup`, `TimeOfFormFillup`) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     // Create a prepared statement
     $stmt = mysqli_prepare($connection, $sql);
 
     // Bind the parameters to the statement
-    mysqli_stmt_bind_param($stmt, 'ssssssss', $courseCode, $teacherName, $experimentName, $experimentNumber, $roll, $dateOfSubmission, $theDate, $theTime);
+    mysqli_stmt_bind_param($stmt, 'sssssssss', $courseCode, $teacherName, $experimentName, $experimentNumber, $roll, $dateOfExperiment, $dateOfSubmission, $theDate, $theTime);
 
     // Execute the statement
     if (mysqli_stmt_execute($stmt)) {
