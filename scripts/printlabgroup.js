@@ -318,7 +318,7 @@ async function downloadLabCoverGroup() {
 
   const link = document.createElement("a");
   link.href = url;
-  link.download = "Lab Cover.pdf";
+  link.download = "Lab Cover(Group).pdf";
   link.click();
 
   URL.revokeObjectURL(url);
