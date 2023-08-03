@@ -11,6 +11,7 @@ form.addEventListener("submit", function (e) {
   ).value;
   var roll = document.getElementById("roll_lab_group").value;
   var dateOfSubmission = document.getElementById("date_lab_group").value;
+  var dateOfExperiment = document.getElementById("date_lab_group_exp").value;
 
   var formData = new FormData();
   formData.append("courseCode", courseCode);
@@ -19,6 +20,7 @@ form.addEventListener("submit", function (e) {
   formData.append("experimentNumber", experimentNumber);
   formData.append("roll", roll);
   formData.append("dateOfSubmission", dateOfSubmission);
+  formData.append("dateOfExperiment", dateOfExperiment);
 
   var xhr = new XMLHttpRequest();
   xhr.open(
@@ -46,19 +48,15 @@ function fillRoll() {
       Math.ceil(parseInt(roll_lab_group_value.slice(4, 7)) / 5) * 5 + 2103000;
     var roll_list = [];
 
-    // Generate roll numbers for the team
     for (var i = 4; i >= 0; i--) {
       var roll_number = team_member_last_roll - i;
 
       if (roll_lab_group_value == roll_number) {
-        // Skip the current input field value
         continue;
       }
 
       roll_list.push(roll_number);
     }
-
-    // Update the other input fields with the generated roll numbers
 
     document.getElementById("roll_lab_group2").value = roll_list[0];
     document.getElementById("roll_lab_group3").value = roll_list[1];
