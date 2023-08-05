@@ -9,6 +9,7 @@ form.addEventListener("submit", function (e) {
   var experimentNumber = document.getElementById("experiment_number").value;
   var roll = document.getElementById("roll_lab").value;
   var dateOfSubmission = document.getElementById("date_lab").value;
+  var dateOfExperiment = document.getElementById("date_lab_exp").value;
 
   var formData = new FormData();
   formData.append("courseCode", courseCode);
@@ -17,6 +18,8 @@ form.addEventListener("submit", function (e) {
   formData.append("experimentNumber", experimentNumber);
   formData.append("roll", roll);
   formData.append("dateOfSubmission", dateOfSubmission);
+  formData.append("dateOfExperiment", dateOfExperiment);
+  formData.append("Individual_Group_Flag", 1);
 
   var xhr = new XMLHttpRequest();
   xhr.open(
@@ -34,6 +37,7 @@ form.addEventListener("submit", function (e) {
 
 async function MakeLabCover() {
   const DateOfSubmission = document.getElementById("date_lab").value;
+  const DateOfExperiment = document.getElementById("date_lab_exp").value;
   const experimentNumber = document.getElementById("experiment_number").value;
   const textInput = document.getElementById("course_code_lab").value;
   const rollNumber = document.getElementById("roll_lab").value;
@@ -118,14 +122,14 @@ async function MakeLabCover() {
     });
     page.drawText(rollNumber, {
       x: 110,
-      y: 153,
+      y: 152.5,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
     page.drawText(studentSection, {
       x: 130,
-      y: 135,
+      y: 136,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
@@ -169,9 +173,18 @@ async function MakeLabCover() {
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
     });
+
+    page.drawText(DateOfExperiment, {
+      x: 205,
+      y: 73,
+      size: 12,
+      font: timesNewRomanFont,
+      color: PDFLib.rgb(0, 0, 0),
+    });
+
     page.drawText(DateOfSubmission, {
-      x: 210,
-      y: 75,
+      x: 442,
+      y: 73,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),

@@ -21,11 +21,12 @@ form.addEventListener("submit", function (e) {
   formData.append("roll", roll);
   formData.append("dateOfSubmission", dateOfSubmission);
   formData.append("dateOfExperiment", dateOfExperiment);
+  formData.append("Individual_Group_Flag", 0);
 
   var xhr = new XMLHttpRequest();
   xhr.open(
     "POST",
-    "https://smartcoverbuilder.000webhostapp.com/labGroupDB.php",
+    "https://smartcoverbuilder.000webhostapp.com/labDB.php",
     true
   );
   xhr.onreadystatechange = function () {
