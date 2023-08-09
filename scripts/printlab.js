@@ -49,8 +49,7 @@ async function MakeLabCover() {
     teacherName.trim() === "" ||
     experimentNumber.trim() === "" ||
     experimentName.trim() === "" ||
-    rollNumber.trim() === "" ||
-    DateOfSubmission.trim() === ""
+    rollNumber.trim() === ""
   ) {
     alert("All fields are required!");
   } else if (
