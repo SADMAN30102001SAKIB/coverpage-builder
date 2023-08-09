@@ -41,8 +41,7 @@ async function MakeAssignment() {
     textInput.trim() === "" ||
     teacherName.trim() === "" ||
     assignmentName.trim() === "" ||
-    rollNumber.trim() === "" ||
-    DateOfSubmission.trim() === ""
+    rollNumber.trim() === ""
   ) {
     alert("All fields are required!");
   } else if (
