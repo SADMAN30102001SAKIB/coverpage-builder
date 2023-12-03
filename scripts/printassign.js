@@ -27,7 +27,7 @@ form.addEventListener("submit", function (e) {
       alert(xhr.responseText);
     }
   };
-  xhr.send(formData);
+  // xhr.send(formData);
 });
 
 async function MakeAssignment() {
@@ -58,8 +58,12 @@ async function MakeAssignment() {
     const fileUrl =
       "https://smartcoverbuilder.000webhostapp.com/Assignment.pdf";
 
-    const response = await fetch(fileUrl);
-    const pdfBytes = await response.arrayBuffer();
+    // const response = await fetch(fileUrl);
+    // const pdfBytes = await response.arrayBuffer();
+
+    await waitForAssignFileFetched();
+
+    const pdfBytes=assignPDF;
 
     const pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
 

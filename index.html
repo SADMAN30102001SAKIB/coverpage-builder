@@ -15,15 +15,15 @@
   <body>
     <!-- Button to open the popup -->
     <div class="container">
-      <button class="btn btn-success" onclick="togglePopup('assignment-popup')">
+      <button class="btn btn-success" onclick="togglePopup('assignment-popup');fetch_assign()">
         Assignment
       </button>
-      <button class="btn btn-success" onclick="togglePopup('labcover-popup')">
+      <button class="btn btn-success" onclick="togglePopup('labcover-popup');fetch_lab();">
         Lab Cover(Individual)
       </button>
       <button
         class="btn btn-success"
-        onclick="togglePopup('labcover-popup-group')"
+        onclick="togglePopup('labcover-popup-group');fetch_lab_group();"
       >
         Lab Cover(Group)
       </button>
@@ -259,7 +259,7 @@
           </button>
         </form>
       </div>
-      <span class="close-btn" onclick="togglePopup('labcover-popup-group')"
+      <span class="close-btn" onclick="togglePopup('labcover-popup-group');"
         >&times;</span
       >
     </div>
@@ -296,7 +296,7 @@
         document.getElementById("roll").value = rollValue;
       }
 
-      const rollValue_lab = localStorage.getItem("roll_lab");
+      const rollValue_lab = localStorage.getItem("roll");
 
       if (rollValue_lab) {
         document.getElementById("roll_lab").value = rollValue_lab;
@@ -451,6 +451,7 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.js"></script>
+    <script src="scripts/fetchandsave.js"></script>
     <script src="scripts/printassign.js"></script>
     <script src="scripts/printlab.js"></script>
     <script src="scripts/printlabgroup.js"></script>
