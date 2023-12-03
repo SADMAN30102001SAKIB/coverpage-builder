@@ -68,7 +68,7 @@ async function fetch_lab(){
         fileLabFetched=true;
     }
     else{
-        const response = await fetch("https://smartcoverbuilder.000webhostapp.com/Assignment.pdf");
+        const response = await fetch("https://smartcoverbuilder.000webhostapp.com/LabCover.pdf");
         if (response.ok) {
         labPDF=await response.arrayBuffer();
         const arrayBufferString = arrayBufferToString(labPDF);
@@ -103,7 +103,7 @@ async function fetch_lab_group(){
         fileLabGroupFetched=true;
     }
     else{
-        const response = await fetch("https://smartcoverbuilder.000webhostapp.com/Assignment.pdf");
+        const response = await fetch("https://smartcoverbuilder.000webhostapp.com/LabGroupCover.pdf");
         if (response.ok) {
         labgroupPDF=await response.arrayBuffer();
         const arrayBufferString = arrayBufferToString(labgroupPDF);
