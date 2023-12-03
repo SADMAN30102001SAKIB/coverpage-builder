@@ -34,7 +34,7 @@ form.addEventListener("submit", function (e) {
       alert(xhr.responseText);
     }
   };
-  xhr.send(formData);
+  // xhr.send(formData);
 });
 
 function fillRoll() {
@@ -110,8 +110,12 @@ async function MakeLabCoverGroup() {
     const fileUrl =
       "https://smartcoverbuilder.000webhostapp.com/LabGroupCover.pdf";
 
-    const response = await fetch(fileUrl);
-    const pdfBytes = await response.arrayBuffer();
+    // const response = await fetch(fileUrl);
+    // const pdfBytes = await response.arrayBuffer();
+
+    await waitForLabGroupFileFetched();
+
+    const pdfBytes=labgroupPDF;
 
     const pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
 
