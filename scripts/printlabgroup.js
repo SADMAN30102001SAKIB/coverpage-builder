@@ -34,7 +34,7 @@ form.addEventListener("submit", function (e) {
       alert(xhr.responseText);
     }
   };
-  // xhr.send(formData);
+  xhr.send(formData);
 });
 
 function fillRoll() {
