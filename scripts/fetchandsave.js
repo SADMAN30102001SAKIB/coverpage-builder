@@ -34,7 +34,7 @@ async function fetch_assign(){
         fileAssignFetched=true;
     }
     else{
-        const response = await fetch("https://smartcoverbuilder.000webhostapp.com/Assignment.pdf");
+        const response = await fetch("https://cse-coverpage.netlify.app/server/Assignment.pdf");
         if (response.ok) {
         assignPDF=await response.arrayBuffer();
         const arrayBufferString = arrayBufferToString(assignPDF);
