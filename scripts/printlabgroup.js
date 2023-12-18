@@ -107,15 +107,11 @@ async function MakeLabCoverGroup() {
     const button = document.querySelector(".labgnrgrp");
     button.innerText = "Generating...";
 
-    // const fileUrl =
-    //   "https://smartcoverbuilder.000webhostapp.com/LabGroupCover.pdf";
+    const fileUrl =
+      "https://smartcoverbuilder.000webhostapp.com/LabGroupCover.pdf";
 
-    // const response = await fetch(fileUrl);
-    // const pdfBytes = await response.arrayBuffer();
-
-    await waitForLabGroupFileFetched();
-
-    const pdfBytes=labgroupPDF;
+    const response = await fetch(fileUrl);
+    const pdfBytes = await response.arrayBuffer();
 
     const pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
 
@@ -322,7 +318,7 @@ async function downloadLabCoverGroup() {
   button.innerText = "Downloading...";
 
   const fileUrl =
-    "https://cse-coverpage.netlify.app/server/LabGroupCover.pdf";
+    "https://smartcoverbuilder.000webhostapp.com/LabGroupCover.pdf";
 
   const response = await fetch(fileUrl);
   const pdfBlob = await response.blob();

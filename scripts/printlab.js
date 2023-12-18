@@ -58,19 +58,15 @@ async function MakeLabCover() {
   ) {
     const newRollValue_lab = document.getElementById("roll_lab").value;
 
-    localStorage.setItem("roll", newRollValue_lab);
+    localStorage.setItem("roll_lab", newRollValue_lab);
 
     const button = document.querySelector(".labgnr");
     button.innerText = "Generating...";
 
-    // const fileUrl = "https://smartcoverbuilder.000webhostapp.com/LabCover.pdf";
+    const fileUrl = "https://smartcoverbuilder.000webhostapp.com/LabCover.pdf";
 
-    // const response = await fetch(fileUrl);
-    // const pdfBytes = await response.arrayBuffer();
-
-    await waitForLabFileFetched();
-
-    const pdfBytes=labPDF;
+    const response = await fetch(fileUrl);
+    const pdfBytes = await response.arrayBuffer();
 
     const pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
 
