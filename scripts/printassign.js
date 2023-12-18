@@ -55,15 +55,11 @@ async function MakeAssignment() {
     const button = document.querySelector(".assgnr");
     button.innerText = "Generating...";
 
-    // const fileUrl =
-      // "https://smartcoverbuilder.000webhostapp.com/Assignment.pdf";
+    const fileUrl =
+      "https://smartcoverbuilder.000webhostapp.com/Assignment.pdf";
 
-    // const response = await fetch(fileUrl);
-    // const pdfBytes = await response.arrayBuffer();
-
-    await waitForAssignFileFetched();
-
-    const pdfBytes=assignPDF;
+    const response = await fetch(fileUrl);
+    const pdfBytes = await response.arrayBuffer();
 
     const pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
 
@@ -189,8 +185,7 @@ async function downloadAssignment() {
   const button = document.querySelector(".assdow");
   button.innerText = "Downloading...";
 
-  // const fileUrl = "https://smartcoverbuilder.000webhostapp.com/Assignment.pdf";
-  const fileUrl = "https://cse-coverpage.netlify.app/server/assignment.pdf";
+  const fileUrl = "https://smartcoverbuilder.000webhostapp.com/Assignment.pdf";
 
   const response = await fetch(fileUrl);
   const pdfBlob = await response.blob();
