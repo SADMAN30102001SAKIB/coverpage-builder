@@ -15,15 +15,15 @@
   <body>
     <!-- Button to open the popup -->
     <div class="container">
-      <button class="btn btn-success" onclick="togglePopup('assignment-popup');fetch_assign()">
+      <button class="btn btn-success" onclick="togglePopup('assignment-popup')">
         Assignment
       </button>
-      <button class="btn btn-success" onclick="togglePopup('labcover-popup');fetch_lab();">
+      <button class="btn btn-success" onclick="togglePopup('labcover-popup')">
         Lab Cover(Individual)
       </button>
       <button
         class="btn btn-success"
-        onclick="togglePopup('labcover-popup-group');fetch_lab_group();"
+        onclick="togglePopup('labcover-popup-group')"
       >
         Lab Cover(Group)
       </button>
@@ -39,12 +39,12 @@
           <h1>Assignment</h1>
           <div class="course_code">
             <div class="form-floating">
-              <select class="form-select" id="course_code" name="selectCourseCode"></select>
+              <select class="form-select" id="course_code"></select>
             </div>
           </div>
           <div class="teacher_name">
             <div class="form-floating">
-              <select class="form-select" id="teacher_name" name="selectTeacherName"></select>
+              <select class="form-select" id="teacher_name"></select>
             </div>
           </div>
           <label for="name">Assignment Name:</label><br />
@@ -91,12 +91,12 @@
           <h1>Lab Cover</h1>
           <div class="course_code">
             <div class="form-floating">
-              <select class="form-select" id="course_code_lab" name="selectCourseCodeLab"></select>
+              <select class="form-select" id="course_code_lab"></select>
             </div>
           </div>
           <div class="teacher_name">
             <div class="form-floating">
-              <select class="form-select" id="teacher_name_lab" name="selectTeacherNameLab"></select>
+              <select class="form-select" id="teacher_name_lab"></select>
             </div>
           </div>
           <label for="experiment_name">Experiment Name:</label><br />
@@ -160,7 +160,6 @@
               <select
                 class="form-select form-select-group"
                 id="course_code_lab_group"
-                name="selectCourseCodeGroup"
               ></select>
             </div>
           </div>
@@ -170,7 +169,6 @@
               <select
                 class="form-select form-select-group"
                 id="teacher_name_lab_group"
-                name="selectTeacherNameGroup"
               ></select>
             </div>
           </div>
@@ -261,7 +259,7 @@
           </button>
         </form>
       </div>
-      <span class="close-btn" onclick="togglePopup('labcover-popup-group');"
+      <span class="close-btn" onclick="togglePopup('labcover-popup-group')"
         >&times;</span
       >
     </div>
@@ -298,7 +296,7 @@
         document.getElementById("roll").value = rollValue;
       }
 
-      const rollValue_lab = localStorage.getItem("roll");
+      const rollValue_lab = localStorage.getItem("roll_lab");
 
       if (rollValue_lab) {
         document.getElementById("roll_lab").value = rollValue_lab;
@@ -453,7 +451,6 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.js"></script>
-    <script src="scripts/fetchandsave.js"></script>
     <script src="scripts/printassign.js"></script>
     <script src="scripts/printlab.js"></script>
     <script src="scripts/printlabgroup.js"></script>
