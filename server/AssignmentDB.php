@@ -20,13 +20,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $dateOfSubmission = sanitizeInput($_POST['dateOfSubmission']);
     
     // Validate the inputs
-    if (empty($courseCode) || empty($teacherName) || empty($assignmentName) || empty($roll) || empty($dateOfSubmission)) {
+    if (empty($courseCode) || empty($teacherName) || empty($assignmentName) || empty($roll)) {
         echo "All fields are required";
         exit();
     }
     
     if (!isValidRoll($roll)) {
-        echo "Invalid roll number";
+        echo "Invalid roll number. example: 2103009";
         exit();
     }
 
@@ -69,6 +69,6 @@ function sanitizeInput($input) {
 
 function isValidRoll($roll) {
     $rollNumber = intval($roll);
-    return ($rollNumber >= 2103001 && $rollNumber <= 2103180);
+    return ($rollNumber >= 2103001 && $rollNumber <= 2103181);
 }
 ?>
