@@ -23,13 +23,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $Individual_Group_Flag = sanitizeInput($_POST['Individual_Group_Flag']);
     
     // Validate the inputs
-    if (empty($courseCode) || empty($teacherName) || empty($experimentName) || empty($experimentNumber) || empty($roll) || empty($dateOfSubmission) || empty($dateOfExperiment)) {
+    if (empty($courseCode) || empty($teacherName) || empty($experimentName) || empty($experimentNumber) || empty($roll)) {
         echo "All fields are required";
         exit();
     }
 
     if (!isValidRoll($roll)) {
-        echo "Invalid roll number";
+        echo "Invalid roll number. example: 2103009";
         exit();
     }
     
