@@ -1,22 +1,18 @@
 {
-  "cse1200": {
-    "code": "CSE 1200",
-    "name": "Competitive Programming Sessional"
+  "cse2100": {
+    "code": "CSE 2100",
+    "name": "Software Development Project I"
   },
-  "cse1202": {
-    "code": "CSE 1202",
-    "name": "Data Structure Sessional"
+  "cse2102": {
+    "code": "CSE 2102",
+    "name": "Discrete Mathematics Sessional"
   },
-  "cse1204": {
-    "code": "CSE 1204",
-    "name": "Object Oriented Programming Sessional"
+  "cse2104": {
+    "code": "CSE 2104",
+    "name": "Digital Logic Design Sessional"
   },
-  "eee1252": {
-    "code": "EEE 1252",
-    "name": "Electronic Devices and Circuits Sessional"
-  },
-  "phy1214": {
-    "code": "Phy 1214",
-    "name": "Physics Sessional"
+  "eee2152": {
+    "code": "EEE 2152",
+    "name": "Electrical Drives and Instrumentation Sessional"
   }
 }

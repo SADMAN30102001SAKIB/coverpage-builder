@@ -1,22 +1,22 @@
 {
-  "cse1201": {
-    "code": "CSE 1201",
-    "name": "Data Structure"
+  "cse2101": {
+    "code": "CSE 2101",
+    "name": "Discrete Mathematics"
   },
-  "cse1203": {
-    "code": "CSE 1203",
-    "name": "Object Oriented Programming"
+  "cse2103": {
+    "code": "CSE 2103",
+    "name": "Digital Logic Design"
   },
-  "eee1251": {
-    "code": "EEE 1251",
-    "name": "Electronic Devices and Circuits"
+  "eee2151": {
+    "code": "EEE 2151",
+    "name": "Electrical Drives and Instrumentation"
   },
-  "math1213": {
-    "code": "Math 1213",
-    "name": "Co-ordinate Geometry and Ordinary Differential Equation"
+  "math2113": {
+    "code": "Math 2113",
+    "name": "Vector Analysis and Linear Algebra"
   },
-  "phy1213": {
-    "code": "Phy 1213",
-    "name": "Physics"
+  "hum2113": {
+    "code": "Hum 2113",
+    "name": "Economics, Government and Sociology"
   }
 }
