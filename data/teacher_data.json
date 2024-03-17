@@ -27,6 +27,10 @@
     "name": "Md. Azmain Yakin Srizon",
     "designation": "Lecturer, Department of CSE,"
   },
+  "BA": {
+    "name": "Prof. Dr. Boshir Ahmed",
+    "designation": "Professor, Department of CSE,"
+  },
   "EKH": {
     "name": "Emrana Kabir Hashi",
     "designation": "Assistant Professor, Department of CSE,"
@@ -59,9 +63,21 @@
     "name": "Mohiuddin Ahmed",
     "designation": "Lecturer, Department of CSE,"
   },
+  "MAR": {
+    "name": "Md. Arafat Rahman",
+    "designation": "Assistant Professor, Department of EEE,"
+  },
   "MFA": {
     "name": "Dr. Md. Feruj Alam",
     "designation": "Professor, Department of Math,"
+  },
+  "MFF": {
+    "name": "Md. Farukuzzaman Faruk",
+    "designation": "Assistant Professor, Department of CSE,"
+  },
+  "MGM": {
+    "name": "Md. Golam Mostakim",
+    "designation": "Assistant Professor, Department of Humanities"
   },
   "MHU": {
     "name": "Prof. Dr. Md. Helal Uddin Molla",
@@ -90,10 +106,6 @@
   "MZA": {
     "name": "Md. Zahangir Alam",
     "designation": "Assistant Professor, Department of Math,"
-  },
-  "MFF": {
-    "name": "Md. Farukuzzaman Faruk",
-    "designation": "Assistant Professor, Department of CSE,"
   },
   "MZI": {
     "name": "Md. Zahirul Islam",
