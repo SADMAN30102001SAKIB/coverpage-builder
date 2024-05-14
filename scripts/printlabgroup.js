@@ -108,7 +108,7 @@ async function MakeLabCoverGroup() {
     button.innerText = "Generating...";
 
     const fileUrl =
-      "https://smartcoverbuilder.000webhostapp.com/LabGroupCover.pdf";
+      "https://coverpagebuilderapi.onrender.com/LabGroupCover";
 
     const response = await fetch(fileUrl);
     const pdfBytes = await response.arrayBuffer();
@@ -318,7 +318,7 @@ async function downloadLabCoverGroup() {
   button.innerText = "Downloading...";
 
   const fileUrl =
-    "https://smartcoverbuilder.000webhostapp.com/LabGroupCover.pdf";
+    "https://coverpagebuilderapi.onrender.com/LabGroupCover";
 
   const response = await fetch(fileUrl);
   const pdfBlob = await response.blob();
