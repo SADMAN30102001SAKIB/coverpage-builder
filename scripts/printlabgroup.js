@@ -108,7 +108,7 @@ async function MakeLabCoverGroup() {
     button.innerText = "Generating...";
 
     const fileUrl =
-      "https://coverpagebuilderapi.onrender.com/LabGroupCover";
+      "https://coverpagebuilderapi-sadman-sakibs-projects.vercel.app/coverpages/LabGroupCover.pdf";
 
     const response = await fetch(fileUrl);
     const pdfBytes = await response.arrayBuffer();
@@ -318,7 +318,7 @@ async function downloadLabCoverGroup() {
   button.innerText = "Downloading...";
 
   const fileUrl =
-    "https://coverpagebuilderapi.onrender.com/LabGroupCover";
+    "https://coverpagebuilderapi-sadman-sakibs-projects.vercel.app/coverpages/LabGroupCover.pdf";
 
   const response = await fetch(fileUrl);
   const pdfBlob = await response.blob();
