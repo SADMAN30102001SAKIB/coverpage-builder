@@ -63,7 +63,7 @@ async function MakeLabCover() {
     const button = document.querySelector(".labgnr");
     button.innerText = "Generating...";
 
-    const fileUrl = "https://smartcoverbuilder.000webhostapp.com/LabCover.pdf";
+    const fileUrl = "https://coverpagebuilderapi.onrender.com/LabCover";
 
     const response = await fetch(fileUrl);
     const pdfBytes = await response.arrayBuffer();
@@ -208,7 +208,7 @@ async function downloadLabCover() {
   const button = document.querySelector(".labdow");
   button.innerText = "Downloading...";
 
-  const fileUrl = "https://smartcoverbuilder.000webhostapp.com/LabCover.pdf";
+  const fileUrl = "https://coverpagebuilderapi.onrender.com/LabCover";
 
   const response = await fetch(fileUrl);
   const pdfBlob = await response.blob();
