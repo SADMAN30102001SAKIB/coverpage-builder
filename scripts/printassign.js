@@ -55,8 +55,7 @@ async function MakeAssignment() {
     const button = document.querySelector(".assgnr");
     button.innerText = "Generating...";
 
-    const fileUrl =
-      "https://coverpagebuilderapi-sadman-sakibs-projects.vercel.app/coverpages/Assignment.pdf";
+    const fileUrl = "/assets/coverpages/Assignment.pdf";
 
     const response = await fetch(fileUrl);
     const pdfBytes = await response.arrayBuffer();
@@ -185,7 +184,7 @@ async function downloadAssignment() {
   const button = document.querySelector(".assdow");
   button.innerText = "Downloading...";
 
-  const fileUrl = "https://coverpagebuilderapi-sadman-sakibs-projects.vercel.app/coverpages/Assignment.pdf";
+  const fileUrl = "/assets/coverpages/Assignment.pdf";
 
   const response = await fetch(fileUrl);
   const pdfBlob = await response.blob();

@@ -378,16 +378,16 @@
       let course_details_lab = {};
       let student_data = {};
 
-      fetch("https://coverpagebuilderapi-sadman-sakibs-projects.vercel.app/data/student_data.json")
+      fetch("/data/student_data.json")
         .then((response) => response.json())
         .then((data) => {
           student_data = data;
         })
         .catch((error) => {
-          console.error("Error: ", error);
+          console.error("Error loading student_data.json: ", error);
         });
 
-      fetch("https://coverpagebuilderapi-sadman-sakibs-projects.vercel.app/data/teacher_data.json")
+      fetch("/data/teacher_data.json")
         .then((response) => response.json())
         .then((data) => {
           teacher_list = data;
@@ -407,10 +407,10 @@
           document.querySelector("#teacher_name_lab_group").innerHTML = options;
         })
         .catch((error) => {
-          console.error("Error: ", error);
+          console.error("Error loading teacher_data.json: ", error);
         });
 
-      fetch("https://coverpagebuilderapi-sadman-sakibs-projects.vercel.app/data/course_data.json")
+      fetch("/data/course_data.json")
         .then((response) => response.json())
         .then((data) => {
           course_details = data;
@@ -426,10 +426,10 @@
           document.querySelector("#course_code").innerHTML = options;
         })
         .catch((error) => {
-          console.error("Error: ", error);
+          console.error("Error loading course_data.json: ", error);
         });
 
-      fetch("https://coverpagebuilderapi-sadman-sakibs-projects.vercel.app/data/course_data_lab.json")
+      fetch("/data/course_data_lab.json")
         .then((response) => response.json())
         .then((data) => {
           course_details_lab = data;
@@ -446,7 +446,7 @@
           document.querySelector("#course_code_lab_group").innerHTML = options;
         })
         .catch((error) => {
-          console.error("Error: ", error);
+          console.error("Error loading course_data_lab.json: ", error);
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>

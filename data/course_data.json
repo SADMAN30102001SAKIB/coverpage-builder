@@ -1,0 +1,22 @@
+{
+  "cse3201": {
+    "code": "CSE 3201",
+    "name": "Operating Systems"
+  },
+  "cse3203": {
+    "code": "CSE 3203",
+    "name": "Data Communication"
+  },
+  "cse3205": {
+    "code": "CSE 3205",
+    "name": "Software Engineering"
+  },
+  "cse3207": {
+    "code": "CSE 3207",
+    "name": "Artificial Intelligence"
+  },
+  "cse3209": {
+    "code": "CSE 3209",
+    "name": "Digital Signal Processing"
+  }
+}
