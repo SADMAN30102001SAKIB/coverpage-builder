@@ -1,0 +1,26 @@
+{
+  "cse3200": {
+    "code": "CSE 3200",
+    "name": "Software Development Project II"
+  },
+  "cse3202": {
+    "code": "CSE 3202",
+    "name": "Operating Systems Sessional"
+  },
+  "cse3204": {
+    "code": "CSE 3204",
+    "name": "Data Communication Sessional"
+  },
+  "cse3206": {
+    "code": "CSE 3206",
+    "name": "Software Engineering Sessional"
+  },
+  "cse3208": {
+    "code": "CSE 3208",
+    "name": "Artificial Intelligence Sessional"
+  },
+  "cse3210": {
+    "code": "CSE 3210",
+    "name": "Digital Signal Processing Sessional"
+  }
+}
