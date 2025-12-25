@@ -63,7 +63,7 @@ async function MakeLabCover() {
     const button = document.querySelector(".labgnr");
     button.innerText = "Generating...";
 
-    const fileUrl = "/assets/coverpages/LabCover.pdf";
+    const fileUrl = "assets/coverpages/LabCover.pdf";
 
     const response = await fetch(fileUrl);
     const pdfBytes = await response.arrayBuffer();
@@ -208,7 +208,7 @@ async function downloadLabCover() {
   const button = document.querySelector(".labdow");
   button.innerText = "Downloading...";
 
-  const fileUrl = "/assets/coverpages/LabCover.pdf";
+  const fileUrl = "assets/coverpages/LabCover.pdf";
 
   const response = await fetch(fileUrl);
   const pdfBlob = await response.blob();
