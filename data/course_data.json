@@ -1,22 +1,22 @@
 {
-  "cse3201": {
-    "code": "CSE 3201",
-    "name": "Operating Systems"
+  "cse4101": {
+    "code": "CSE 4101",
+    "name": "Compiler Design"
   },
-  "cse3203": {
-    "code": "CSE 3203",
-    "name": "Data Communication"
+  "cse4103": {
+    "code": "CSE 4103",
+    "name": "Computer Networks"
   },
-  "cse3205": {
-    "code": "CSE 3205",
-    "name": "Software Engineering"
+  "cse4105": {
+    "code": "CSE 4105",
+    "name": "Digital Image Processing"
   },
-  "cse3207": {
-    "code": "CSE 3207",
-    "name": "Artificial Intelligence"
+  "cse4109": {
+    "code": "CSE 4109",
+    "name": "Information Systems Analysis and Design"
   },
-  "cse3209": {
-    "code": "CSE 3209",
-    "name": "Digital Signal Processing"
+  "cse4119": {
+    "code": "CSE 4119",
+    "name": "Data Mining"
   }
 }
