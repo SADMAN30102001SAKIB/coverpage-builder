@@ -1,26 +1,30 @@
 {
-  "cse3200": {
-    "code": "CSE 3200",
-    "name": "Software Development Project II"
+  "cse4100": {
+    "code": "CSE 4100",
+    "name": "Project/Thesis I"
   },
-  "cse3202": {
-    "code": "CSE 3202",
-    "name": "Operating Systems Sessional"
+  "cse4102": {
+    "code": "CSE 4102",
+    "name": "Compiler Design Sessional"
   },
-  "cse3204": {
-    "code": "CSE 3204",
-    "name": "Data Communication Sessional"
+  "cse4104": {
+    "code": "CSE 4104",
+    "name": "Computer Networks Sessional"
   },
-  "cse3206": {
-    "code": "CSE 3206",
-    "name": "Software Engineering Sessional"
+  "cse4106": {
+    "code": "CSE 4106",
+    "name": "Digital Image Processing Sessional"
   },
-  "cse3208": {
-    "code": "CSE 3208",
-    "name": "Artificial Intelligence Sessional"
+  "cse4108": {
+    "code": "CSE 4108",
+    "name": "Industrial Attachment"
   },
-  "cse3210": {
-    "code": "CSE 3210",
-    "name": "Digital Signal Processing Sessional"
+  "cse4110": {
+    "code": "CSE 4110",
+    "name": "Information Systems Analysis and Design Sessional"
+  },
+  "cse4120": {
+    "code": "CSE 4120",
+    "name": "Data Mining Sessional"
   }
 }
